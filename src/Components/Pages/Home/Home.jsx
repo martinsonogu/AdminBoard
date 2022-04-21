@@ -3,16 +3,16 @@ import "./Home.css";
 import FeaturedInfo from "../../FeaturedInfo/FeaturedInfo"
 import Chart from '../../Charts/Chart';
 import { userData } from '../../../dummyData';
-import WidgetBig from '../../widgetBig/WidgetBig';
-import WidgetSmall from '../../widgetSmall/WidgetSmall';
+import WidgetSm from '../../WidgetSm/WidgetSm';
+import WidgetLg from '../../WidgetLg/WidgetLg';
 const Home = () => {
   return (
     <div className='home'>
       <FeaturedInfo />
       <Chart data={userData} title="User Analytics" grid dataKey="Active User"/>
-      <div className="homeWidget">
-        <WidgetSmall/>
-        <WidgetBig/>
+      <div className="homeWidgets">
+        <WidgetSm />
+        <WidgetLg />
       </div>
     </div>
   )
