@@ -18,8 +18,8 @@ function App() {
       <Sidebar/>
       <Routes>
         <Route exact path="/" element = {<Home />}/>
-        <Route path="/Users" element = {<UserList />}/>
-        <Route path="/User/:userId" element = {<User />}/>
+        <Route path="/users" element = {<UserList />}/>
+        <Route path="/user/:userId" element = {<User />}/>
       </Routes>
       </div>
     </Router>
