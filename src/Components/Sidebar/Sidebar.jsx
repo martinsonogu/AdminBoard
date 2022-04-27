@@ -1,7 +1,8 @@
 import React from 'react';
 import "./Sidebar.css"
 import {LineStyle, Timeline,TrendingUp, PersonOutline, Inventory2Outlined, 
-    PaidOutlined, AssessmentOutlined, MailOutline, ChatBubbleOutline,Forum, WorkOutlineOutlined, Report} from "@mui/icons-material"
+    PaidOutlined, AssessmentOutlined, MailOutline, ChatBubbleOutline,Forum, WorkOutlineOutlined, Report} from "@mui/icons-material";
+import { Link } from 'react-router-dom';
 
 const Sidebar = () => {
   return (
@@ -12,10 +13,12 @@ const Sidebar = () => {
                   Dashboard
               </h3>
               <ul className="sidebarList">
+                  <Link to="/" className='link'>
                   <li className="sidebarListItem">
                       <LineStyle className='sidebarIcon'/>
                       Home
                   </li>
+                  </Link>
                   <li className="sidebarListItem">
                       <Timeline className='sidebarIcon'/>
                       Analytics
@@ -31,14 +34,18 @@ const Sidebar = () => {
                   Quickmenu
               </h3>
               <ul className="sidebarList">
+                  <Link to="/users" className='link'>
                   <li className="sidebarListItem">
                       <PersonOutline className='sidebarIcon'/>
                       Users
                   </li>
+                  </Link>
+                  <Link to="/products" className='link'>
                   <li className="sidebarListItem">
                       <Inventory2Outlined className='sidebarIcon'/>
                       Products
                   </li>
+                  </Link>
                   <li className="sidebarListItem">
                       <PaidOutlined className='sidebarIcon'/>
                       Transactions
