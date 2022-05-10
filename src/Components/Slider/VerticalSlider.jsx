@@ -18,7 +18,7 @@ const VerticalSlider = (props) =>  {
     }
   }
 
-  return (
+  return ( <div className="slide">
     <Box sx={{ height: 250 }}>
       <Slider
         sx={{
@@ -38,6 +38,7 @@ const VerticalSlider = (props) =>  {
         onKeyDown={PreventHorizontalKeyboardNavigation}
       />
     </Box>
+    </div>
   );
 }
 export default VerticalSlider;

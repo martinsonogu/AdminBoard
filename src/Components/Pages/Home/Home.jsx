@@ -5,11 +5,12 @@ import Chart from '../../Charts/Chart';
 import { userData } from '../../../dummyData';
 import WidgetSm from '../../WidgetSm/WidgetSm';
 import WidgetLg from '../../WidgetLg/WidgetLg';
-import VerticalSlider from "../../Slider/VerticalSlider"
+import VerticalSlider from "../../Slider/VerticalSlider";
+import ProgressBar from "../../Progressbar/ProgressBar"
 
 const Home = () => {
   const [getValue, setGetValue] = useState(1);
-  console.log(` your value is ${getValue}`)
+  
 
   let newValue = {};
   let sliderValue =getValue ;
@@ -25,16 +26,22 @@ const Home = () => {
     <div className='home'>
       <FeaturedInfo />
       <div className="mainContainer">
-        <div className="slide">
-            <VerticalSlider 
+        
+        <VerticalSlider 
             //passing prop to child which is verticalslider
             changedValue = {getValue => setGetValue(getValue)} 
-            />
-        </div>
+        />
+        
+        
         <Chart 
         data={transformedData} 
         title="User Analytics" 
         grid dataKey="Active User"  />
+      
+        <div className='progressbar'style={{ width: 200, height: 200 }}>
+          <ProgressBar  handleProgress={getValue}
+        />
+        </div>
         </div>
       <div className="homeWidgets">
         <WidgetSm />
