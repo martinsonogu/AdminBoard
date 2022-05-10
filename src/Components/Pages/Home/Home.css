@@ -1,7 +1,13 @@
 .home {
   flex: 4;
 }
+.mainContainer{
+  display: flex;
+  align-items: center;
+}
 .homeWidgets {
   display: flex;
+  
   margin: 20px;
 }
+

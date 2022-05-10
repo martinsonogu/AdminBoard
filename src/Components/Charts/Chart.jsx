@@ -3,6 +3,9 @@ import { LineChart, Line, XAxis, CartesianGrid, Tooltip,
    ResponsiveContainer } from 'recharts';
 import "./Chart.css";
 
+
+
+
 const Chart = ({title, data, dataKey, grid}) => {
   
   
