@@ -16,7 +16,8 @@ const Home = () => {
   let sliderValue =getValue ;
   const transformedData = userData.map(calculatedNewMonth);
   function calculatedNewMonth(month){
-    const newActiveUserValue = sliderValue * month["Active User"];
+
+    const newActiveUserValue = Math.floor(sliderValue * month["Active User"]* Math.random()) ;
     newValue = {...month, "Active User": newActiveUserValue}
     return newValue;
   }
@@ -24,7 +25,7 @@ const Home = () => {
 
   return (
     <div className='home'>
-      <FeaturedInfo />
+      <FeaturedInfo valueOfSlider = {sliderValue} />
       <div className="mainContainer">
         
         <VerticalSlider 

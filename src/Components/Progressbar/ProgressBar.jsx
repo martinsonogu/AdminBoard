@@ -4,12 +4,12 @@ import 'react-circular-progressbar/dist/styles.css';
 import React from 'react'
 
 const Progressbar = (props) => {
-  console.log(props)
+  
     const value = props.handleProgress;
   return (
       
     <div className='progress'>
-      <CircularProgressbar value={value}  maxValue={10} text={`${value * 10}%`} />;
+      <CircularProgressbar value={value}  maxValue={100} text={`${value * 1}%`} />;
 
 {/* <CircularProgressbar
   value={percentage}

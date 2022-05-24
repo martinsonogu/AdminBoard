@@ -30,7 +30,7 @@ const VerticalSlider = (props) =>  {
         defaultValue={10}
         step={1}
         min={1} 
-        max={10}
+        max={100}
         value={value}
         onChange={newSliderValue}
         onClick={() => props.changedValue(value)}

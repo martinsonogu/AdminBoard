@@ -1,49 +1,61 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {ArrowDownward, ArrowUpward} from "@mui/icons-material"
 import "./FeaturedInfo.css"
 
 
-const FeaturedInfo = () => {
+const FeaturedInfo = ({valueOfSlider}) => {
+    const [color, setColor] = useState();
+    
+
+
+
+    let revenue = 1200 * valueOfSlider - 20000;
+    let revenueRate = Math.floor((valueOfSlider * 1.3) - 22)
+    let sales = 214 * valueOfSlider + 50000;
+    let salesRate = Math.floor(valueOfSlider * 0.7)
+    let cost = 123 * valueOfSlider + 32; 
+    let costRate = (valueOfSlider/2) + 25;
+
   return (
     <div className='featured'>
-        <div className="featuredItem">
+        <div className={`featuredItem ${valueOfSlider > 1 & valueOfSlider <18 && `bgRed`}`}>
             <span className="featuredTitle">
                 Revenue
             </span>
-            <div className="featuredMoneyContainer">
+            <div className='featuredMoneyContainer'>
                 <span className="featuredMoney">
-                    $2,415
+                  $ { revenue }
                 </span>
                 <span className="featuredMoneyRate">
-                    -11.4 <ArrowDownward className='featuredIcon negative' />
+                    {revenueRate} {valueOfSlider > 1 & valueOfSlider <18 ? <ArrowDownward className='featuredIcon negative' /> : <ArrowUpward className='featuredIcon positive' /> } 
                 </span>
             </div>
             <span className="featuredSub">Compared to last month</span>
         </div>
-        <div className="featuredItem">
+        <div className={`featuredItem ${valueOfSlider > 17 & valueOfSlider <55 && `bgOrange`}`}>
             <span className="featuredTitle">
-                Sales
+            Sales
             </span>
             <div className="featuredMoneyContainer">
                 <span className="featuredMoney">
-                    $4,415
+                $ { sales }
                 </span>
                 <span className="featuredMoneyRate">
-                    -1.4 <ArrowDownward className='featuredIcon negative' />
+                    {salesRate} {valueOfSlider > 17 & valueOfSlider <55 ? <ArrowUpward className='featuredIcon positive' /> : <ArrowDownward className='featuredIcon negative' />  }
                 </span>
             </div>
             <span className="featuredSub">Compared to last month</span>
         </div>
-        <div className="featuredItem">
+        <div className={`featuredItem ${valueOfSlider > 55 && `bgGreen`}`}>
             <span className="featuredTitle">
                 Cost
             </span>
             <div className="featuredMoneyContainer">
                 <span className="featuredMoney">
-                    $2,225
+                $ { cost }
                 </span>
                 <span className="featuredMoneyRate">
-                    +2.4 <ArrowUpward className='featuredIcon positive' />
+                    +{costRate} {valueOfSlider > 55  ? <ArrowUpward className='featuredIcon positive' /> : <ArrowDownward className='featuredIcon negative'  /> }
                 </span>
             </div>
             <span className="featuredSub">Compared to last month</span>
