@@ -1,13 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {ArrowDownward, ArrowUpward} from "@mui/icons-material"
 import "./FeaturedInfo.css"
 
 
 const FeaturedInfo = ({valueOfSlider}) => {
-    const [color, setColor] = useState();
-    
-
-
 
     let revenue = 1200 * valueOfSlider - 20000;
     let revenueRate = Math.floor((valueOfSlider * 1.3) - 22)
